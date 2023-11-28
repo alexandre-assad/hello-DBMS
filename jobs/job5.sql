@@ -6,4 +6,6 @@ select w1.name from word w1, word w2, word w3 where w2.name = 'United Kingdom' a
 
 select w1.name, (w1.population * pow(w2.population , (-1)) * 100) popualiton_per   from word w1, word w2 where w2.name = 'Germany' and w1.continent = 'Europe' ;
 
-select continent,  name, max(area) from word group by continent
+select continent,  name, max(area) from word group by continent ;
+
+select continent from word where population < 25000 group by continent ;
