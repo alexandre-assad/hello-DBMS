@@ -16,6 +16,8 @@ select ga.mdate, ga.team1 from game ga inner join etam e on ga.team1 = e.id wher
 
 select go.player from goal inner join game ga on ga.id = go.matchid where ga.stadium = 'National Stadium, Warsaw' ;
 
+#TODO test this
+
 select count(*) from goal group by teamid ;
 
 select ga.stadium, count(*) from goal go inner join game ga go.matchid = ga.id group by ga.stadium ; 
