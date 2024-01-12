@@ -25,13 +25,45 @@ Voici ci-joint un très réussit schéma des différences, dans l'article de dat
 ![Compare Data stocakges](schemas/data-lakehouse-new.png)
 
 ## Donnez une définition et des exemples de systèmes de gestion de bases de données avec des illustrations.
-E. Qu’est ce qu’une base de données relationnelle ? Qu’est ce qu’une base de
-données non relationnelle ? Donnez la différence entre les deux avec des
-exemples d’applications.
-F. Définissez les notions de clé étrangère et clé primaire.
 
-G. Quelles sont les propriétés ACID ?
-H. Définissez les méthodes Merise et UML. Quelles sont leur utilité dans le monde
-de l’informatique ? Donnez des cas précis d’utilisation avec des schémas.
-I. Définissez le langage SQL. Donnez les commandes les plus utilisées de ce
-langage et les différentes jointures qu’il est possible de faire.
+Un système de gestion de bases de données (SGBD) est un logiciel de stockage, de gestion, de tri, d'organisation et d'utilisation de bases de données.  
+Par exemple, le SGBD "LaPlateforme" peut contenir 2 bases de données : "Eleves" et "Activites",    
+avec par exemple dans "Eleve" des schémas : "Adminisatrion", "Cursus",   
+avec le schéma "Administration" qui pourrait contenir les tables : "Inscriptions", "Alternances",  
+avec dans la table "Inscriptions" les colonnes : "member_id", "name", "cursus_name", "cursus_id", "date_inscription"  
+
+![Schéma SGBD](schemas/sgbd_schema.png)
+
+
+## E. Qu’est ce qu’une base de données relationnelle ? Qu’est ce qu’une base de données non relationnelle ? Donnez la différence entre les deux avec des exemples d’applications.  
+
+Une base de données relationelle est une BD qui lie les données entre elles, dans un tableau. Elle permet une accessibilité à la donnée pour l'homme, pour une meilleure lecture et compréhension.  
+Une base de données non relationelle est une BD qui ne va pas lier les données entre elles, elle va permettre plus simplement un stockage avec une clé.  
+
+## F. Définissez les notions de clé étrangère et clé primaire.
+ 
+Une clé primaire est un index unique à un élément dans une table. Dans la même ligne, une clé étrangère est la clé primaire d'une autre table. Cette clé étrangère permettra des jointures unique à d'autres tables.   
+
+## G. Quelles sont les propriétés ACID ?
+Les propriétés ACID sont l'acronymes des propriétés suivantes : Atomicité, Cohérence, Isolation et Durabilité. Grâce à ces propriétés, toutes les transactions de base de données sont fiables et sécurisées.
+
+## H. Définissez les méthodes Merise et UML. Quelles sont leur utilité dans le monde de l’informatique ? Donnez des cas précis d’utilisation avec des schémas.
+Le Merise est une méthode pour analyser et réaliser des "systèmes d'information". Pour ce faire, on va passer par la création d'un schéma directeur, des études préalables puis détaillés jusqu'à la réalisation.
+L'UML est une méthode pour représenter les aspects d'un systèmes à l'aide de diagrammes.
+
+![Schéma Merise](schemas/Merise.webp)
+![Schéma UML](schemas/UML.webp)
+
+## I. Définissez le langage SQL. Donnez les commandes les plus utilisées de ce langage et les différentes jointures qu’il est possible de faire.
+
+Le SQL est un langage de de manipulations de Query pour interagir avec les bases de données relationnelles.  
+Le SQL contient de nombreuses query : 
+- Create : Pour créer des tables, des schémas ou même des bases de données
+- Select : pour afficher des lignes d'une table. La structure est ``` select *colonnes* from *table* (where *condition* group by *colonne* order by *colonne* limit *nombre*)```
+- Update : Pour modifier une ligne existante 
+- delete : Pour supprimer une ligne existante
+- with ... as () : pour la création de CTE  
+Il est possible de faire des joitures pour intéragir avec des colonnes spécifiques. Ces jointures vont lier deux tables ensemble vis à vis d'une ou plusieurs de leur colonnes respectives. Il existe plusieurs jointures :
+- left join : Prendre toute les lignes de la table de gauche, et prendre ce de la table de droite lorsque la jointure est respectée (opposé donc à right join)
+- inner join : Prendre uniquement les lignes qui respectent la jointure (opposé à outer join)
+Il en existe d'autres plus spécifiques mais très rarement utilisés (full join, natural join pour faire une copy, self join)
